@@ -1,10 +1,21 @@
 import pandas as pd
-df = pd.read_csv("load_data.csv", parse_dates=["Time(Local)"], decimal=",", index_col="Time(Local)")
+import matplotlib.pyplot as plt
 
+df = pd.read_csv("load_data.csv", parse_dates=["Time(Local)"], decimal=",")
+df["Time(Local)"] = pd.to_datetime(df["Time(Local)"], format="mixed", utc = True)
+df=df.set_index("Time(Local)")
 df["Netto"] = (df["Production"] - df["Consumption"])
 
 max_production = df["Production"].max()
 min_production = df["Production"].min()
 mean_production = df["Production"].mean()
 
-print(max_production, min_production, mean_production)
+max_netto = df["Netto"].max()
+min_netto = df["Netto"].min()
+
+dogn = df.loc["2026-01-01"]
+dogn.plot()
+plt.xlabel("Tid")
+plt.ylabel("Effekt")
+plt.grid()
+plt.show()  
