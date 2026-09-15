@@ -3,4 +3,8 @@ df = pd.read_csv("load_data.csv", parse_dates=["Time(Local)"], decimal=",", inde
 
 df["Netto"] = (df["Production"] - df["Consumption"])
 
-print(df.head())
+max_production = df["Production"].max()
+min_production = df["Production"].min()
+mean_production = df["Production"].mean()
+
+print(max_production, min_production, mean_production)
