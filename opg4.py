@@ -29,7 +29,7 @@ idx_min_netto = df["Netto"].idxmin()
 
 sum_production = df["Production"].sum()
 
-df.plot(y=["Production", "Consumption"], figsize=(10, 5))
+df.plot(y=["Production", "Consumption", "Netto"], figsize=(10, 5))
 plt.xlabel("Tid")
 plt.ylabel("Effekt")
 plt.title("Produksjon og forbruk over tid")
