@@ -41,17 +41,14 @@ morning_peak = Am*np.exp(-(t - mym)**2 /(2*sigmam**2))
 midday_peak = Amid*np.exp(-(t - mymid)**2 /(2*sigmamid**2))
 evening_peak = Ae*np.exp(-(t - mye)**2 /(2*sigmae**2))
 
-load_model = l0 + night_peak + morning_peak + midday_peak + evening_peak
+load_model = l0 + night_peak + morning_peak  + evening_peak
 
 #l_t = l0 + Ai*np.exp(-(t - myi)**2 /(2*sigmai**2))
 
-#plt.plot(t, dogn.values, marker="o", linestyle="None")
+plt.plot(t, dogn.values, marker="o", linestyle="None")
 plt.plot(t, load_model)
 plt.xlabel("Time")
 plt.ylabel("Forbruk")
 plt.xticks(np.arange(0, 24, 1))
 plt.grid()
-plt.show()
-
-plt.plot(t, night_peak, label="Night peak")
 plt.show()
