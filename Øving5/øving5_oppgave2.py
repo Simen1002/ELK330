@@ -8,7 +8,7 @@ df["Time(Local)"] = pd.to_datetime(df["Time(Local)"], format="%d.%m.%Y %H:%M:%S 
 df=df.set_index("Time(Local)")
 df = df.sort_index()
 
-#Utlavgt døgn
+#Utlavgt døgn er 25 Mars, 2026
 dogn = df.loc["2026-03-25", "Consumption"]
 
 #Modellen
