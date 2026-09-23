@@ -5,7 +5,7 @@ t = np.linspace(0, 24, 500)
 
 A = 800 
 mu = 13
-sigma = 3.5
+sigma = 3
 
 G = A * np.exp(-(t - mu)**2 / (2 * sigma**2))
 
