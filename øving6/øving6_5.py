@@ -15,7 +15,13 @@ juni_data = df.loc["2023-06-05"]
 
 t = np.arange(0, 24, 1)
 
+A = 1070
+mu = 11.5
+sigma = 3
+G = A * np.exp(-(t - mu)**2 / (2 * sigma**2))
+
 plt.plot(t, juni_data["G(i)"])
+plt.plot(t, G)
 plt.xlabel("Tid")
 plt.ylabel("Innstråling")
 plt.grid()
